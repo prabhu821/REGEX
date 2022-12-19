@@ -9,6 +9,18 @@ namespace REGEX.UserRegistrationProblem
 {
     internal class UserRegistration
     {
-        
+        public static string FirstName = "^[A-Z]{1}[A-Za-z]{2,}$";
+
+        public void validateFirstName(string fName)
+        {
+            if (Regex.IsMatch(fName, FirstName))
+            {
+                Console.WriteLine("First Name : " + fName);
+            }
+            else
+            {
+                Console.WriteLine("First alphabet should be capital");
+            }
+        }
     }
 }
