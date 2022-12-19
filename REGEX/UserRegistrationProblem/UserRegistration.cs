@@ -13,7 +13,7 @@ namespace REGEX.UserRegistrationProblem
         public static string LastName = "^[A-Z]{1}[A-Za-z]{2,}$";
         public static string Email = "^[a-zA-Z0-9]+@[a-zA-Z]+.+([co.in|com])$";
         public static string MobileNumber = "^[1-9]{2}[: :][0-9]{10}$";
-        public static string Password = "^.*(?=.{8,})(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).*$";
+        public static string Password = "^.*(?=.{8,})(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$";
 
         //FIRST NAME
         public void validateFirstName(string fName)
@@ -67,7 +67,7 @@ namespace REGEX.UserRegistrationProblem
             }
         }
 
-        //PASSWORD RULE 1,RULE 2,RULE 3
+        //PASSWORD RULE 1,RULE 2,RULE 3,RULE 4
         public void validatePassword(string password)
         {
             if (Regex.IsMatch(password, Password))
@@ -76,7 +76,7 @@ namespace REGEX.UserRegistrationProblem
             }
             else
             {
-                Console.WriteLine("For password minimum 8 characters required and atleast 1 upper case and atleast 1 numeric number");
+                Console.WriteLine("For password minimum 8 characters required and atleast 1 upper case and atleast 1 numeric number and 1 special character");
             }
         }
     }
