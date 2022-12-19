@@ -12,6 +12,7 @@ namespace REGEX.UserRegistrationProblem
         public static string FirstName = "^[A-Z]{1}[A-Za-z]{2,}$";
         public static string LastName = "^[A-Z]{1}[A-Za-z]{2,}$";
         public static string Email = "^[a-zA-Z0-9]+@[a-zA-Z]+.+([co.in|com])$";
+        public static string MobileNumber = "^[1-9]{2}[: :][0-9]{10}$";
 
         //FIRST NAME
         public void validateFirstName(string fName)
@@ -48,7 +49,20 @@ namespace REGEX.UserRegistrationProblem
             }
             else
             {
-                Console.WriteLine("Please enter a valid email address ex :- abc@xyz.co.in/.com");
+                Console.WriteLine("Please enter a valid email address 'ex :- abc@xyz.co.in/.com'");
+            }
+        }
+
+        //MOBILE NUMBER
+        public void validateMobileNumber(string mobileNumber)
+        {
+            if (Regex.IsMatch(mobileNumber, MobileNumber))
+            {
+                Console.WriteLine("Mobile Number : " + mobileNumber);
+            }
+            else
+            {
+                Console.WriteLine("Please enter a valid 10 digit mobile number with 2 digit country code ex 'xx 9xxxxxxx45'");
             }
         }
     }
