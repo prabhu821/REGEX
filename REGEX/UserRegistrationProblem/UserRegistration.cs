@@ -10,7 +10,9 @@ namespace REGEX.UserRegistrationProblem
     internal class UserRegistration
     {
         public static string FirstName = "^[A-Z]{1}[A-Za-z]{2,}$";
+        public static string LastName = "^[A-Z]{1}[A-Za-z]{2,}$";
 
+        //FIRST NAME
         public void validateFirstName(string fName)
         {
             if (Regex.IsMatch(fName, FirstName))
@@ -19,7 +21,20 @@ namespace REGEX.UserRegistrationProblem
             }
             else
             {
-                Console.WriteLine("First alphabet should be capital");
+                Console.WriteLine("First alphabet should be capital and minimum 3 character");
+            }
+        }
+
+        //LAST NAME
+        public void validateLastName(string lName)
+        {
+            if (Regex.IsMatch(lName, LastName))
+            {
+                Console.WriteLine("Last Name : " + lName);
+            }
+            else
+            {
+                Console.WriteLine("First alphabet should be capital and minimum 3 character");
             }
         }
     }
